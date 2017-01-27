@@ -1,0 +1,58 @@
+{
+  "name": "biojs-vis-bioschemas-event-list",
+  "description": "A visualization widget for Event data using bioschemas Event Especification",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ficolo/biojs-vis-bioschemas-event-list",
+  "author": {
+    "name": "Federico",
+    "email": "fico89@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ficolo/biojs-vis-bioschemas-event-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ficolo/biojs-vis-bioschemas-event-list/issues"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+		"test": "echo 'Error: no test specified' && exit 1",
+		"build": "gulp build",
+		"build-browser": "gulp build-browser",
+		"build-browser-min": "gulp build-browser-gzip",
+		"install": "gulp build && npm run css",
+		"watch": "gulp watch",
+		"test-watch": "gulp test-watch",
+		"w": "prunner \"npm run sniper\" \"npm run watch\" \"npm run watch-css\"",
+		"sniper": "sniper .",
+		"css": "parcelify ./ -c build/bundle.css",
+		"watch-css": "parcelify -w ./ -c build/bundle.css --loglevel verbose"
+  },
+  "dependencies": {},
+  "devDependencies": {
+		"mkdirp": "^0.5.0",
+		"browserify": "6.x",
+		"sniper": "0.x",
+		"watchify": "^1.0.6",
+		"prunner": "1.x",
+		"parcelify": "0.x",
+		"gulp-jshint": "1.x",
+		"del": "^0.1.3",
+		"gulp": "^3.8.8",
+		"gulp-chmod": "^1.1.1",
+		"gulp-gzip": "^0.0.8",
+		"gulp-rename": "^1.2.0",
+		"gulp-streamify": "^0.0.5",
+		"gulp-uglify": "^1.0.1",
+		"gulp-util": "^3.0.1",
+		"vinyl-source-stream": "^1.0.0"
+  }, 
+  "sniper": {
+    "js": [ "/build/list.js"],
+    "css": ["/build/bundle.css"], 
+    "snippets": ["examples"],
+    "first": "simple"
+   }, 
+  "keywords": ["bioschemas","event","widget","visualization","biojs"]
+}
